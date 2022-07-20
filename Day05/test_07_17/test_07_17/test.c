@@ -25,7 +25,7 @@
 //	//printf("%s",arr1);//***** world
 //}
 
-/*------------------------自定义函数函数------------------------*/
+/*--------------------自定义函数函数--------------------*/
 //#define _CRT_SECURE_NO_WARNINGS
 //#include <stdio.h>
 ////例如求最大值的函数
@@ -101,8 +101,8 @@
 //}
 
 //3. 写一个函数，实现一个整形有序数组的二分查找
-#define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
 //方案1：
 //int* Binary(int * arr,int arrlen,int input) {
 //	int result[2];
@@ -138,8 +138,12 @@
 //	int * result = Binary(arr,arrlen,input);
 //	printf("您要查询的数:%d下标:%d", result[0], result[1]);
 //}
+// 
 //方案2：
-//int* Binary(int* arr, int arrlen, int input) {
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+////arr[]:本质上是指针变量，指向实参数组的首地址
+//int* Binary(int arr[], int arrlen, int input) {
 //	int left = 0;
 //	int right = arrlen - 1;
 //	int mid;
@@ -172,8 +176,12 @@
 //	printf("您要查询的数:%d下标:%d", result[0], result[1]);
 //}
 
-//老师讲得：：
-//int Binary(int arr[], int arrlen, int input) {
+//老师讲的：：
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//int Binary(int arr[],int arrlen, int input) {
+//	//int arrlen = sizeof(arr) / sizeof(arr[0]);Error原因如下：
+//	//数组在传参时只会传递首地址
 //	int left = 0;
 //	int right = arrlen - 1;
 //	int mid;
@@ -189,7 +197,7 @@
 //			return mid;
 //		}
 //	}
-//	return -1;
+//	return - 1;
 //}
 //void main() {
 //	int arr[10] = { 1,2,3,4,5,6,7,8,9,10 };
@@ -200,38 +208,105 @@
 //	int input;
 //	printf("\n请输入您要查询的数：");
 //	scanf("%d", &input);
-//	printf("您要查询数的下标:%d",Binary(arr,arrlen,input));
-//}
-
-//函数返回数组的方法：
-//int* function(int* a) {
-//	a[0] = 1;
-//	a[1] = 2;
-//	a[2] = 3;
-//	return a;
-//}
-//int main() {
-//	int a[10];
-//	int* b;
-//	b = function(a);
-//	for (int i = 0; i < 3;i++) {
-//		printf("%d ",b[i]);
+//	int result = Binary(&arr, arrlen,input);
+//	if (result != -1) {
+//		printf("您要查找的数的下标为：%d",result);
 //	}
+//	else printf("抱歉没有找到您要查找的元素");
 //}
 
-//问题代码！！！！！！！！！！！！！！！！！！！！！！！！！！
-//int* test() {
-//	int a[3];
-//	a[0] = 1;
-//	a[1] = 2;
-//	a[2] = 3;
-//	return a;
+//4. 写一个函数，每调用一次这个函数，就会将 num 的值增加1
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//void addone(int* pi) {
+//	(*pi)++;
 //}
 //void main() {
-//	int * a = test();
-//	printf("%d %d %d", a[0], a[1], a[2]);
-//	putchar('\n');
-//	for (int i = 0; i < 3;i++) {
-//		printf("%d ",a[i]);
-//	}
+//	int input;
+//	printf("请输入一个整数：");
+//	scanf("%d",&input);
+//
+//	addone(&input);
+//	printf("result = %d\n", input);//1
+//
+//	addone(&input);
+//	printf("result = %d\n", input);//2
+//
+//	addone(&input);
+//	printf("result = %d\n", input);//3
+//}
+
+/*================================函数的嵌套调用和链式访问================================*/
+/*------------------------嵌套调用------------------------*/
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//void test2() {
+//	printf("hehe\n");
+//}
+//void test1() {
+//	test2();
+//}
+//void main() {
+//	test1();//hehe
+// //函数可以嵌套，但不能嵌套定义
+//}
+
+/*------------------------链式访问------------------------*/
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//#include <string.h>
+//void main() {
+//	//int len = strlen("abc");
+//	//printf("%d\n", len);//3
+//	//链式访问：把一个函数的返回值作为另一个函数的参数
+//	//printf("%d\n", strlen("abc"));
+//	//printf():返回打印字符的个数 注：\n也算个字符
+//	printf("%d\n",printf("%d\n",printf("%d\n",100)));//100 4 2
+//}
+
+/*================================函数的声明和定义================================*/
+/*------------------------函数声明------------------------*/
+/*
+* 1. 告诉编译器有一个函数、参数、返回类型是什么，但是具体是
+*    不是存在，函数声明决定不了
+* 2. 函数的声明一般出现在函数的使用之前。要满足先声明后使用
+* 3. 函数的声明一般要放在头文件中的
+*/
+
+/*------------------------函数定义------------------------*/
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//void main() {
+//	//函数的定义是指函数的实现，具体的函数功能的实现
+//	int a = 10, b = 20;
+//	//函数声明，但这种用法很少
+//	//一般用头文件声明，源文件实现
+//	int Add(int,int);
+//	printf("%d", Add(a, b));
+//}
+//int Add(int a, int b) {
+//	return a + b;
+//}
+//头文件声明，源文件实现的代码
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//#include "calculator.h"
+//void main() {
+//	int a = 10, b = 20;
+//	printf("%d\n",Add(a,b));//30
+//	printf("%d\n",Sub(a,b));//-10
+//	printf("%d\n",Mul(a,b));//200
+//	printf("%d\n",Div(a,b));//0
+//}
+//头文件，但使用lib实现
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+////引入静态库
+//#pragma comment(lib,"calculator.lib")
+//void main() {
+//	int a = 10, b = 20;
+//	printf("%d\n", Add(a, b));//30
+//	printf("%d\n", Sub(a, b));//-10
+//	printf("%d\n", Mul(a, b));//200
+//	printf("%d\n", Div(a, b));//0
 //}

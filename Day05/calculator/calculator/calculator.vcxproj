@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{c8dbd158-61d5-46f4-9acd-79c1b9dcbe30}</ProjectGuid>
-    <RootNamespace>test0717</RootNamespace>
+    <ProjectGuid>{5fae7f8c-91eb-4a34-8a9b-cccb0fb33327}</ProjectGuid>
+    <RootNamespace>calculator</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -40,7 +40,7 @@
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -127,12 +127,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="calculator.c" />
-    <ClCompile Include="test.c" />
+    <ClInclude Include="calculator.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="calculator.h" />
-    <ClInclude Include="calculator1.h" />
+    <ClCompile Include="calculator.c" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

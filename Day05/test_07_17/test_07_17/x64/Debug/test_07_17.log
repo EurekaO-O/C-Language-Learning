@@ -1,3 +1,6 @@
 ﻿  test.c
-F:\Visual Studio Project\Day05\test_07_17\test_07_17\test.c(240): warning C4172: 返回局部变量或临时变量的地址: a
+F:\Visual Studio Project\Day05\test_07_17\test_07_17\test.c(307,17): warning C4013: “Add”未定义；假设外部返回 int
+F:\Visual Studio Project\Day05\test_07_17\test_07_17\test.c(308,17): warning C4013: “Sub”未定义；假设外部返回 int
+F:\Visual Studio Project\Day05\test_07_17\test_07_17\test.c(309,17): warning C4013: “Mul”未定义；假设外部返回 int
+F:\Visual Studio Project\Day05\test_07_17\test_07_17\test.c(310,17): warning C4013: “Div”未定义；假设外部返回 int
   test_07_17.vcxproj -> F:\Visual Studio Project\Day05\test_07_17\x64\Debug\test_07_17.exe
