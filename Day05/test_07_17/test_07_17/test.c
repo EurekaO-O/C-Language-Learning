@@ -310,3 +310,79 @@
 //	printf("%d\n", Mul(a, b));//200
 //	printf("%d\n", Div(a, b));//0
 //}
+
+/*================================函数递归================================*/
+/*------------------------练习1------------------------*/
+//接受一个整型值（无符号），按照顺序打印它的每一位。例如：输入：1234，输出 1 2 3 4
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//void print(unsigned int input) {
+//	if (input > 9) {
+//		print(input / 10);
+//	}
+//	printf("%d ",input % 10);
+//}
+//void main() {
+//	unsigned int input;
+//	printf("请输入：");
+//	scanf("%u",&input);//1234
+//	print(input);
+//}
+/*------------------------练习2------------------------*/
+//编写函数不允许创建临时变量，求字符串的长度
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//int myStrlen2(char* arr) {
+//	int len = 0;
+//	while (*arr != '\0') {
+//		arr++;
+//		len++;
+//	}
+//	return len;
+//}
+//int myStrlen1(char * arr) {
+//	if (*arr != '\0') {
+//		return 1 + myStrlen1(str + 1);
+//	}
+//	else return 0;
+//}
+//void main() {
+//	char arr[] = "abc";
+//	printf("%d",myStrlen(arr));
+//}
+/*------------------------递归与迭代------------------------*/
+//练习1
+//求n的阶乘,使用递归（不考虑溢出）
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//int Fac(int num) {
+//	if (num <= 1) {
+//		return 1;
+//	}
+//	else return num * Fac(num-1);
+//}
+//void main() {
+//	int input;
+//	printf("请输入：");
+//	scanf("%d",&input);
+//	printf("%d",Fac(input));
+//}
+
+//练习2
+//求第n个斐波那契数，使用递归（不考虑溢出）
+//1 1 2 3 5 8 13 21 34 55...即前两项之和
+#define _CRT_SECURE_NO_WARNINGS
+#include <stdio.h>
+int Fib(int num) {
+	if (num <= 2) {
+		return 1;
+	}
+	else return Fib(num - 1) + Fib(num - 2);
+
+}
+void main() {
+	int input;
+	printf("请输入：");
+	scanf("%d", &input);
+	printf("%d", Fib(input));
+}
