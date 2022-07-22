@@ -369,20 +369,124 @@
 //}
 
 //练习2
-//求第n个斐波那契数，使用递归（不考虑溢出）
+//求第n个斐波那契数（不考虑溢出）
 //1 1 2 3 5 8 13 21 34 55...即前两项之和
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+////用递归虽然代码简单，但效率慢
+//int Fib(int num) {
+//	if (num <= 2) {
+//		return 1;
+//	}
+//	else return Fib(num - 1) + Fib(num - 2);
+//
+//}
+////有些情况用非递归写更好
+//int Fib(int num) {
+//	int a = 1, b = 1, c = 1;
+//	while (num > 2) {
+//		c = a + b;
+//		a = b;
+//		b = c;
+//		num--;
+//	}
+//	return c;
+//}
+//void main() {
+//	int input;
+//	printf("请输入：");
+//	scanf("%d", &input);
+//	printf("%d", Fib(input));
+//}
+//作业：汉诺塔
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//void move(char a,char c,int n) {
+//	printf("把第%d个圆盘从%c ---> %c\n",n,a,c);
+//}
+//void Hanoi(char a,char b,char c,int n) {
+//	if (n != 1) {
+//		Hanoi(a, c, b, n - 1);
+//		move(a, c, n);
+//		Hanoi(b, a, c, n - 1);
+//	}
+//	else {
+//		move(a, c, n);
+//	}
+//}
+//void main() {
+//	int n = 0;
+//	printf("请输入汉诺塔的盘子数:");
+//	scanf("%d",&n);
+//	Hanoi('a','b','c',n);
+//	return 0;
+//}
+
+/*================================Day05结束================================*/
+
+/*================================函数作业================================*/
+//1.判断100~200之间的素数
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//#include <math.h>
+//void main() {
+//	int j;
+//	for (int i = 101; i <= 200;i+=2) {
+//		int sqrti = (int)sqrt(i);
+//		for (j = 2; j <= i ;j++) {
+//			if (i % j == 0) break;
+//		}
+//		if (i == j) {
+//			printf("素数：%d\n",i);
+//		}
+//	}
+//}
+//2.判断闰年（能被4整除，不能被100整除，能被400整除）
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//#include <math.h>
+//char* leapYear(int year) {
+//	return (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) ?"闰年":"不是闰年";
+//}
+//void main() {
+//	printf("请输入年份：");
+//	int year;
+//	scanf("%d",&year);
+//	char* result = leapYear(year);
+//	printf("%s ", result);
+//}
+//3.实现一个函数来交换两个整数的内容
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//void swap(int* a,int* b) {
+//	int tmp;
+//	tmp = *a;
+//	*a = *b;
+//	*b = tmp;
+//}
+//void main() {
+//	printf("请输入两个数，用空格隔开：");
+//	int a, b;
+//	scanf("%d %d",&a,&b);
+//	swap(&a, &b);
+//	printf("a=%d,b=%d", a,b);
+//}
+
+//4.实现一个函数，打印乘法口诀表，口诀表的行数和列数自己指定
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-int Fib(int num) {
-	if (num <= 2) {
-		return 1;
+void MulTable(int num) {
+	for (int i = 1; i <= num; i++) {
+		for (int j = 1; j <= i;j++) {
+			//%-2d:十位数向左对齐
+			printf("%d×%d=%-2d ",j,i,i*j);
+		}
+		putchar('\n');
 	}
-	else return Fib(num - 1) + Fib(num - 2);
-
 }
 void main() {
-	int input;
 	printf("请输入：");
-	scanf("%d", &input);
-	printf("%d", Fib(input));
+	int num;
+	scanf("%d", &num);
+	MulTable(num);
 }
