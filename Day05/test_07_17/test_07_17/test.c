@@ -441,6 +441,7 @@
 //		}
 //	}
 //}
+
 //2.判断闰年（能被4整除，不能被100整除，能被400整除）
 //#define _CRT_SECURE_NO_WARNINGS
 //#include <stdio.h>
@@ -455,6 +456,7 @@
 //	char* result = leapYear(year);
 //	printf("%s ", result);
 //}
+
 //3.实现一个函数来交换两个整数的内容
 //#define _CRT_SECURE_NO_WARNINGS
 //#include <stdio.h>
@@ -473,20 +475,78 @@
 //}
 
 //4.实现一个函数，打印乘法口诀表，口诀表的行数和列数自己指定
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//void MulTable(int num) {
+//	for (int i = 1; i <= num; i++) {
+//		for (int j = 1; j <= i;j++) {
+//			//%-2d:十位数向左对齐
+//			printf("%d×%d=%-2d ",j,i,i*j);
+//		}
+//		putchar('\n');
+//	}
+//}
+//void main() {
+//	printf("请输入：");
+//	int num;
+//	scanf("%d", &num);
+//	MulTable(num);
+//}
+
+//5.递归方式实现打印一个整数的每一位
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//void Per(int num) {
+//	if (num > 9) {
+//		Per(num / 10);
+//	}
+//	printf("%d ",num % 10);
+//}
+//void main() {
+//	printf("请输入：");
+//	int num;
+//	scanf("%d", &num);
+//	Per(num);
+//}
+
+//6.递归和非递归分别实现求n的阶乘(不考虑溢出的问题)
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//int Fac1(int num) {
+//	if (num <= 1) {
+//		return 1;
+//	}
+//	return num * Fac1(num - 1);
+//}
+//int Fac2(int num) {
+//	int fac = 1;
+//	for (int i = 1; i <= num;i++) {
+//		fac *= i;
+//	}
+//	return fac;
+//}
+//void main() {
+//	printf("请输入：");
+//	int num;
+//	scanf("%d", &num);
+//	printf("%d的阶乘是%d\n",num, Fac1(num));
+//	printf("%d的阶乘是%d\n",num, Fac2(num));
+//}
+
+//7.递归和非递归分别实现求n的阶乘(不考虑溢出的问题)
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-void MulTable(int num) {
-	for (int i = 1; i <= num; i++) {
-		for (int j = 1; j <= i;j++) {
-			//%-2d:十位数向左对齐
-			printf("%d×%d=%-2d ",j,i,i*j);
-		}
-		putchar('\n');
+void ReverseStr(char str[]) {
+	if () {
+	
 	}
+	ReverseStr(str);
+	printf("%c",str);
 }
 void main() {
 	printf("请输入：");
-	int num;
-	scanf("%d", &num);
-	MulTable(num);
+	char str[4];
+	scanf("%s", str);
+	ReverseStr(num);
+	//printf("%c",str[3]);
 }
