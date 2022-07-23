@@ -369,7 +369,7 @@
 //}
 
 //练习2
-//求第n个斐波那契数（不考虑溢出）
+//	求第n个斐波那契数（不考虑溢出）
 //1 1 2 3 5 8 13 21 34 55...即前两项之和
 //#define _CRT_SECURE_NO_WARNINGS
 //#include <stdio.h>
@@ -533,20 +533,104 @@
 //	printf("%d的阶乘是%d\n",num, Fac2(num));
 //}
 
-//7.递归和非递归分别实现求n的阶乘(不考虑溢出的问题)
-#define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
-void ReverseStr(char str[]) {
-	if () {
-	
-	}
-	ReverseStr(str);
-	printf("%c",str);
-}
-void main() {
-	printf("请输入：");
-	char str[4];
-	scanf("%s", str);
-	ReverseStr(num);
-	//printf("%c",str[3]);
-}
+//7.编写一个函数reverse_string(char*string)(递归实现)
+//实现：将参数字符串中的字符反向排列，不是逆序打印
+//例如：原：abcdef 反向后：fedcba
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//int myStrlen(char * str) {
+//	if (*str != '\0') {
+//		return 1 + myStrlen(str+1);
+//	}
+//	return 0;
+//}
+////1.使用循环实现
+//void reverse_string1(char * str) {
+//	int left = 0;
+//	int right = myStrlen(str) - 1;
+//	int tmp;
+//	while (left <= right) {
+//		tmp = str[left];
+//		str[left] = str[right];//*(str+left)和str[left]一样
+//		str[right] = tmp;
+//		left++; right--;
+//	}
+//}
+////2.递归实现
+//void reverse_string2(char* str) {
+//	char tmp = *str;
+//	int len = myStrlen(str) - 1;
+//	*str = *(str + len);
+//	*(str + len) = '\0';
+//	if (myStrlen(str+1) >= 2) {
+//		reverse_string2(str+1);
+//	}
+//	*(str + len) = tmp;
+//}
+//void main() {
+//	char str[] = "abcdef";
+//	printf("原数组：%s\n", str);
+//	printf("长度：%d\n", myStrlen(str));
+//	reverse_string2(str);
+//	printf("逆序后：%s\n",str);
+//}
+
+//8.写一个递归函数如DigitSum(n),输入一个非负整数，返回组成它的数字之和
+//输入：1729，输出：19
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//int DigitSum(unsigned int n) {
+//	if (n > 9) {
+//		return DigitSum(n / 10) + n % 10;
+//	}
+//	return n;
+//}
+//void main() {
+//	int num;
+//	scanf("%d",&num);
+//	printf("%d\n", DigitSum(num));
+//}
+
+//9.编写一个函数实现n的k次方，使用递归实现
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//double Power(int n,int k) {
+//	if (k == 0) {
+//		return 1.0;
+//	}
+//	else if (k > 0) {
+//		return n * Power(n, k - 1);
+//	}
+//	else return 1.0 / Power(n, -k);
+//}
+//void main() {
+//	int n,k;
+//	scanf("%d %d", &n,&k);
+//	printf("%lf", Power(n, k));
+//}
+
+//10.第n个斐波那契数
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//int Fib1(int n) {
+//	if (n <= 2) {
+//		return 1;
+//	}
+//	else return Fib1(n - 1) + Fib1(n - 2);
+//}
+//int Fib2(int n) {
+//	int a = 1, b = 1, c = 1;
+//	while (n > 2) {
+//		c = a + b;
+//		a = b;
+//		b = c;
+//		n--;
+//	}
+//	return c;
+//}
+//void main() {
+//	int n = 0;
+//	scanf("%d", &n);
+//	//printf("%d", Fib1(n));
+//	printf("%d", Fib2(n));
+//}
