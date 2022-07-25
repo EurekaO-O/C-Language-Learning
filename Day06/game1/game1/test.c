@@ -104,7 +104,7 @@ void main() {
 		switch (input) {
 		case 0:
 			printf("|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |\n");
-			printf("|- - - - - - - - - - - - - 退出游戏成功，感谢游玩! - - - - - - - - - - - - |\n");
+			printf("|- - - - - - - - - - - - 退出游戏成功，感谢游玩! - - - - - - - - |\n");
 			break;
 		case 1:
 			PlayerVsComputer();
