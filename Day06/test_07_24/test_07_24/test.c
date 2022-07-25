@@ -157,7 +157,7 @@
 /*------------------------ 冒泡排序 ------------------------*/
 //#define _CRT_SECURE_NO_WARNINGS
 //#include <stdio.h>
-//void BubbleSort(int nums[],int numsSize) {
+//void BubbleSort1(int nums[],int numsSize) {
 //	int tmp = 0;
 //	for (int i = 0; i < numsSize; i++) {
 //		//numsSize-1-i:-i是指后面的元素不需要再次排序了，提高效率
@@ -170,18 +170,31 @@
 //		}
 //	}
 //}
+////冒泡优化 当原数组本身就是有序的时候使用
+//void BubbleSort2(int nums[], int numsSize) {
+//	int tmp = 0;
+//	
+//	for (int i = 0; i < numsSize; i++) {
+//		int falg = 0;
+//		//numsSize-1-i:-i是指后面的元素不需要再次排序了，提高效率
+//		for (int j = 0; j < numsSize - 1 - i; j++) {
+//			if (nums[j] > nums[j + 1]) {
+//				tmp = nums[j + 1];
+//				nums[j + 1] = nums[j];
+//				nums[j] = tmp;
+//				falg = 1;
+//			}
+//		}
+//		if (falg == 0) break;
+//	}
+//}
 //void main() {
 //	int nums[] = {4,5,3,7,9,10,19,2};
 //	int numsSize = sizeof(nums) / sizeof(nums[0]);
-//	BubbleSort(nums, numsSize);
+//	BubbleSort2(nums, numsSize);
 //	for (int i = 0; i < numsSize;i++) {
 //		printf("%d ",nums[i]);
 //	}
 //}
 
-/*==================================== 数组实例 ====================================*/
-#define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
-void main() {
-	
-}
+/*==================================== Day06结束 ====================================*/
