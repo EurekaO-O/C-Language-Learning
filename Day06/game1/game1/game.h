@@ -12,8 +12,9 @@ void InitBoard(char board[ROW][COL],int row,int col);
 //显示棋盘
 void DisplayBoard(char board[ROW][COL], int row, int col);
 
-//玩家下棋
-void PlayerChess(char board[ROW][COL], int row, int col);
+//玩家1下棋
+void PlayerOneChess(char board[ROW][COL], int row, int col);
+void PlayerTwoChess(char board[ROW][COL], int row, int col);
 //电脑下棋
 void ComputerChess(char board[ROW][COL], int row, int col);
 

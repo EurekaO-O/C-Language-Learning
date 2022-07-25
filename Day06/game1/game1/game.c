@@ -32,11 +32,11 @@ void DisplayBoard(char board[ROW][COL], int row, int col) {
 	}
 }
 
-//玩家下棋
-void PlayerChess(char board[ROW][COL], int row, int col) {
+//玩家1下棋
+void PlayerOneChess(char board[ROW][COL], int row, int col) {
 	int x, y;
 	while (1) {
-		printf("玩家开始下棋(请输入坐标，用空格隔开)->:");
+		printf("玩家 1 开始下棋(请输入坐标,空格隔开,T是您的棋子)->:");
 		int result = scanf("%d %d", &x, &y);
 		//判断用户输入坐标合法性
 		if (x >= 1 && x <= row && y >= 1 && y <= col) {
@@ -53,8 +53,30 @@ void PlayerChess(char board[ROW][COL], int row, int col) {
 	}
 }
 
+//玩家2下棋
+void PlayerTwoChess(char board[ROW][COL], int row, int col) {
+	int x, y;
+	while (1) {
+		printf("玩家 2 开始下棋(请输入坐标,空格隔开,F是您的棋子)->:");
+		int result = scanf("%d %d", &x, &y);
+		//判断用户输入坐标合法性
+		if (x >= 1 && x <= row && y >= 1 && y <= col) {
+			//判断是否被占用
+			if (board[x - 1][y - 1] == ' ') {
+				board[x - 1][y - 1] = 'F';
+				break;
+			}
+			else printf("当前位置已经被占用了，请重新输入\n");
+		}
+		else {
+			printf("坐标非法，请重新输入\n");
+		}
+	}
+}
+
+//电脑下棋
 void ComputerChess(char board[ROW][COL], int row, int col) {
-	printf("电脑开始下棋->:\n");
+	printf("电脑开始下棋(电脑的棋子是F)->:\n");
 	while (1) {
 		int x = rand() % row;
 		int y = rand() % col;
@@ -87,7 +109,10 @@ char IsWin(char board[ROW][COL], int row, int col) {
 	}
 
 	//对角线
-	if ((board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[1][1] != ' ') || (board[0][2] == board[1][1] && board[2][0] && board[1][1] != ' ')) {
+	if (board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[1][1] != ' ') {
+		return board[1][1];
+	}
+	if (board[0][2] == board[1][1] && board[2][0] && board[1][1] != ' ') {
 		return board[1][1];
 	}
 
