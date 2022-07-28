@@ -33,7 +33,7 @@ void PlayerVsComputer() {
 		result = IsWin(board, ROW, COL);
 		if (result != 'C') break;
 	}
-
+	system("cls");//清屏
 	printf("|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -|\n");
 	printf("| - - - - - - - - - - - - ↓游戏最终结果↓ - - - - - - - - - - - -|\n");
 	DisplayBoard(board, ROW, COL);
@@ -70,9 +70,10 @@ void PlayerVsPlayer() {
 		PlayerTwoChess(board, ROW, COL);
 		DisplayBoard(board, ROW, COL);
 		result = IsWin(board, ROW, COL);
-		if (result != 'C') break;
+		if (result != 'C') {
+			break;
+		}
 	}
-
 	printf("|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -|\n");
 	printf("| - - - - - - - - - - - - ↓游戏最终结果↓ - - - - - - - - - - - -|\n");
 	DisplayBoard(board, ROW, COL);
