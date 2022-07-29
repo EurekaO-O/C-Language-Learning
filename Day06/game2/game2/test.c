@@ -1,5 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "game.h"
+extern int thunder;
+
 void Menu() {
 	printf("|= = = = = = = = = = = = = 欢迎游玩扫雷! = = = = = = = = = = = = |\n");
 	printf("|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |\n");
@@ -10,10 +12,23 @@ void Menu() {
 	printf("|- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - |\n");
 }
 void MineSweeper() {
+	char mineBoard[ROWS][COLS] = { 0 };//存放布置雷的信息
+	char showBoard[ROWS][COLS] = { 0 };//存放排查雷的信息
+	//初始化棋盘
+	InitBoard(mineBoard,ROWS,COLS,'0');
+	InitBoard(showBoard,ROWS,COLS,'*');
+	//输出棋盘(因为只需要显示9*9的内容所以使用ROW COL)
+	
+	DisplayBoard(showBoard,ROW,COL);
 
+	//布置雷
+	LayThunder(mineBoard,ROW,COL,thunder);
+	DisplayBoard(mineBoard, ROW, COL);
+	//排查雷
 }
 void main() {
 	int input = 0;
+	srand((unsigned int)time(NULL));
 	do {
 		Menu();
 		printf("请选择:");
