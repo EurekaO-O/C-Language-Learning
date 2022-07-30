@@ -1,6 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "game.h"
-extern int thunder;
 
 void Menu() {
 	printf("|= = = = = = = = = = = = = »¶Ó­ÓÎÍæÉ¨À×! = = = = = = = = = = = = |\n");
@@ -22,9 +21,11 @@ void MineSweeper() {
 	DisplayBoard(showBoard,ROW,COL);
 
 	//²¼ÖÃÀ×
-	LayThunder(mineBoard,ROW,COL,thunder);
+	LayThunder(mineBoard,ROW,COL);
 	DisplayBoard(mineBoard, ROW, COL);
+
 	//ÅÅ²éÀ×
+	FindThunder(mineBoard,showBoard,ROW,COL);
 }
 void main() {
 	int input = 0;

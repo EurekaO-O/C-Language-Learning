@@ -9,6 +9,7 @@
 #define ROWS ROW + 2 //行
 #define COLS COL + 2 //列
 
+#define THUNDER 10 //雷的数量
 
 
 //初始化棋盘
@@ -18,5 +19,7 @@ void InitBoard(char board[ROWS][COLS], int rows, int cols, char set);
 void DisplayBoard(char board[ROWS][COLS],int row,int col);
 
 //布置雷
-void LayThunder(char mineBoard[ROWS][COLS], int row, int col, int thunder);
+void LayThunder(char mineBoard[ROWS][COLS], int row, int col);
 
+//排查雷
+void FindThunder(char mineBoard[ROWS][COLS],char showBoard[ROWS][COLS],int row,int col);
