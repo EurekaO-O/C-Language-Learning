@@ -258,33 +258,37 @@
 //#define _CRT_SECURE_NO_WARNINGS
 //#include <stdio.h>
 //void main() {
-//	int arr[10] = {1,2,3,4,5,6,7,8,9,10};
-//	int arrlen = sizeof(arr) / sizeof(arr[0]);//数组总长度
+//	int nums[] = {1,2,3,4,5,6,7,8,9,10};
+//	int numsSize = sizeof(nums) / sizeof(nums[0]);//数组总长度
 //
 //	printf("原数组：");
-//	for (int i = 0; i < arrlen; i++) printf("%d ", arr[i]);
+//	for (int i = 0; i < numsSize; i++) printf("%d ", nums[i]);
 //	
 //	putchar('\n');
 //
-//	int ip = 0;
+//	int target = 0;
 //	printf("请输入您要寻找的数字:");
-//	scanf("%d",&ip);
+//	scanf("%d",&target);
 //	//使用二分查找
 //
-//	int i = 0;
-//	int left = 0;//数组第一个元素
-//	int right = arrlen - 1;//数组最后一个元素
+//	int left = 0;//首元素下标
+//	int right = numsSize - 1;//末元素的下标(总长度-1,数组从0开始)
+//	int mid = 0;
 //	while (left <= right) {
-//		int mid = left + (right - left) / 2;//防止溢出
-//		int arrmid = arr[mid];
-//		if (ip > arrmid) {
+//		mid = left + (right - left) / 2;//中间元素的下标 防止溢出
+//		int numsMid = nums[mid];//中间元素
+//		//目标值大于中间元素时
+//		if (numsMid < target) {
+//			//查找范围：[mid+1,right]
 //			left = mid + 1;
 //		}
-//		else if (ip < arrmid) {
+//		//目标值小于中间元素时
+//		else if (target < numsMid) {
+//			//查找范围：[left,mid-1]
 //			right = mid - 1;
 //		}
 //		else {
-//			printf("您要查询的数字为%d，下标是%d", arrmid, mid);
+//			printf("您要查询的数字为%d，下标是%d", numsMid, mid);
 //			break;
 //		}
 //	}
