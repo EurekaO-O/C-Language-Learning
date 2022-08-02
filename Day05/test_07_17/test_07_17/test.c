@@ -382,6 +382,7 @@
 //
 //}
 ////有些情况用非递归写更好
+//1.while循环实现
 //int Fib(int num) {
 //	int a = 1, b = 1, c = 1;
 //	while (num > 2) {
@@ -391,6 +392,16 @@
 //		num--;
 //	}
 //	return c;
+//}
+//2.for循环实现
+//int fib(int input) {
+//	int f1 = 1, f2 = 1, f3 = 1;
+//	for (int i = 2; i < input;i++) {
+//		f3 = f1 + f2;
+//		f1 = f2;
+//		f2 = f3;
+//	}
+//	return f3;
 //}
 //void main() {
 //	int input;
