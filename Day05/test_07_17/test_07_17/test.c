@@ -409,7 +409,7 @@
 //	scanf("%d", &input);
 //	printf("%d", Fib(input));
 //}
-//作业：汉诺塔
+/*================================作业：汉诺塔================================*/
 //#define _CRT_SECURE_NO_WARNINGS
 //#include <stdio.h>
 //void move(char a,char c,int n) {
