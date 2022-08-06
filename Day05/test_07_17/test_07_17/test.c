@@ -412,25 +412,28 @@
 /*================================作业：汉诺塔================================*/
 //#define _CRT_SECURE_NO_WARNINGS
 //#include <stdio.h>
-//void move(char a,char c,int n) {
+//int step = 0;//步数
+////移动一个圆盘
+//void Move(char a,char c,int n) {
 //	printf("把第%d个圆盘从%c ---> %c\n",n,a,c);
+//	step++;
 //}
 //void Hanoi(char a,char b,char c,int n) {
 //	if (n != 1) {
-//		Hanoi(a, c, b, n - 1);
-//		move(a, c, n);
-//		Hanoi(b, a, c, n - 1);
+//		Hanoi(a, c, b, n - 1);//1.当A有n个圆盘时将n-1个圆盘,借助C,移至到B
+//		Move(a, c, n);//2.将A剩余的最后1个圆盘移至C
+//		Hanoi(b, a, c, n - 1);//3.B剩余n-1个圆盘,借助A,移至C
 //	}
 //	else {
-//		move(a, c, n);
+//		Move(a, c, n);//若有1个圆盘，直接将圆盘从A移动到C
 //	}
 //}
 //void main() {
 //	int n = 0;
-//	printf("请输入汉诺塔的盘子数:");
+//	printf("请输入汉诺塔的圆盘数:");
 //	scanf("%d",&n);
 //	Hanoi('a','b','c',n);
-//	return 0;
+//	printf("共走了%d步",step);
 //}
 
 /*================================Day05结束================================*/
