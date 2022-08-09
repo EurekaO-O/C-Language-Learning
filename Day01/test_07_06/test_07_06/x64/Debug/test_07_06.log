@@ -1,0 +1,5 @@
+﻿  test.c
+F:\Visual Studio Project\Day01\test_07_06\test_07_06\test.c(121,12): warning C4101: “e”: 未引用的局部变量
+F:\Visual Studio Project\Day01\test_07_06\test_07_06\test.c(121,6): warning C4101: “c”: 未引用的局部变量
+F:\Visual Studio Project\Day01\test_07_06\test_07_06\test.c(121,9): warning C4101: “d”: 未引用的局部变量
+  test_07_06.vcxproj -> F:\Visual Studio Project\Day01\test_07_06\x64\Debug\test_07_06.exe
