@@ -110,17 +110,138 @@
 //	printf("a = %d,b = %d\n",a,b);
 //}
 /*---------------- 求一个整数存储在内存中的二进制中1的个数 ----------------*/
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//void main() {
+//	int num = 0;
+//	printf("请输入：");
+//	scanf("%d",&num);
+//	int count = 0;
+//	for (int i = 0; i < 32; i++) {
+//		if (1 & (num >> i)) {
+//			count++;
+//		}
+//	}
+//	printf("%d出现了%d次\n",num,count);
+//}
+
+/*---------------- 赋值运算符 ----------------*/
+/*
+* 赋值运算符分为两类：
+* 1.赋值运算符(=)
+* 2.复合赋值符(+= -= *= /= %= >>= <<= &= |= ^=)
+*/
+//1.赋值运算符(=)
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//void main() {
+//	int age = 30;//年龄
+//	int a = 3;
+//	int b = 0;
+//	printf("age = %d\n",age);//30
+//	age = 18;//不满意可以重新赋值
+//	printf("age = %d\n", age);//18
+//	b = a = age + 2;//连续赋值
+//	printf("b = %d\n", b);//20
+//}
+//2.复合赋值符(+= -= *= /= %= >>= <<= &= |= ^=)
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//void main() {
+//	// +=
+//	//int a = 100;
+//	//a = a + 10;//110
+//	//printf("%d\n", a);
+//	//a = 100;
+//	//a += 10;//110
+//	//printf("%d\n", a);//a += 10 和 a = a + 10 相同
+//
+//	// -=
+//	//int a = 100;
+//	//a = a - 10;//90
+//	//printf("%d\n",a);
+//	//a = 100;
+//	//a -= 10;//90
+//	//printf("%d\n", a);
+//
+//	// *=
+//	//int a = 100;
+//	//a = a * 2;//200
+//	//printf("%d\n",a);
+//	//a = 100;
+//	//a *= 2;//200
+//	//printf("%d\n", a);
+//
+//	// /=
+//	//int a = 100;
+//	//a = a / 2;//50
+//	//printf("%d\n",a);
+//	//a = 100;
+//	//a /= 2;//50
+//	//printf("%d\n", a);
+//
+//	// %=
+//	//int a = 100;
+//	//a = a % 3;//1
+//	//printf("%d\n", a);
+//	//a = 100;
+//	//a %= 3;//1
+//	//printf("%d\n", a);
+//
+//	// >>=
+//	//int a = 8;
+//	//a = a >> 3;//1
+//	//printf("%d\n", a);
+//	//a = 8;
+//	//a >>= 3;//1
+//	//printf("%d\n", a);
+//
+//	// &=
+//	//int a = 5;
+//	//a = a & 3;//1
+//	//printf("%d\n", a);
+//	//a = 5;
+//	//a &= 3;//1
+//	//printf("%d\n", a);
+//
+//}
+
+/*---------------- 单目运算符 ----------------*/
+/*
+* !逻辑反操作
+* - 负值
+* + 正值
+* & 取地址
+* sizeof      操作数的类型长度（以字节为单位）
+* ~对一个数的二进制按位取反
+* --          前置、后置--
+* --          前置、后置--
+* * 间接访问操作符(解引用操作符)
+* (类型)强制类型转
+*/
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
 void main() {
-	int num = 0;
-	printf("请输入：");
-	scanf("%d",&num);
-	int count = 0;
-	for (int i = 0; i < 32; i++) {
-		if (1 & (num >> i)) {
-			count++;
-		}
-	}
-	printf("%d出现了%d次\n",num,count);
+	// !逻辑反操作
+	//int a = 1;
+	//printf("%d\n",a);//1
+	//printf("%d\n",!a);//0
+
+	//-负值
+	//int a = 1;
+	//printf("%d\n",-a);//-1
+
+	//+ 正值
+	//int a = 1;
+	//printf("%d\n",+a);//1 一般省略
+
+	//& 取地址
+	//int a = 1;
+	//printf("%p\n",&a);//a的内存地址
+
+	//sizeof      操作数的类型长度（以字节为单位）
+	//int a = 1;
+	//printf("%d\n",sizeof(a));//4(int类型占4字节)
+
+	//~对一个数的二进制按位取反
 }
