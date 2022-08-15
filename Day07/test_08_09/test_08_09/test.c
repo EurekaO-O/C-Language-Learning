@@ -351,10 +351,55 @@
 //}
 
 /*---------------- 条件运算符 ----------------*/
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//void main() {
+//	int a = 3;
+//	int b = 0;
+//	//原因：a > b条件成立 执行表达式2
+//	printf(a > b ? "a大于b" : "b大于a");//a大于b
+//}
+
+/*---------------- 逗号运算符 ----------------*/
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
+//void main() {
+//	int a = 3, b = 2, c = 5;
+//	//从左向右依次运算，最后一个表达式赋值给n
+//	int n = (a = 8, c = c - b, b += 2, b = a - c);
+//	printf("a = %d,b = %d,c = %d,n = %d\n",a,b,c,n);//a=8,b=5,c=3,n=5
+//}
+
+/*---------------- 下标引用、函数调用和结构成员 ----------------*/
 #define _CRT_SECURE_NO_WARNINGS
 #include <stdio.h>
-void main() {
-	int a = 3;
-	int b = 0;
-	printf(a > b ? "a大于b" : "b大于a");
-}
+
+////下标引用
+//void main() {
+//	
+//	int arr[10] = {1,2,3,4,5,6,7};
+//	printf("a[1] = %d\n",arr[3]);//4 []:下标引用
+//}
+//
+////函数调用
+//void test() {
+//	printf("函数调用");
+//}
+//void main() {
+//	
+//	test();//():函数调用操作符,可以有参数也可以无参
+//}
+
+//结构成员
+//struct man{
+//	char name[10];
+//	int age;
+//	int salary;
+//};
+//void main() {
+//	struct man man1 = {"张三",18,2000};
+//	printf("姓名:%s,年龄:%d,薪资:%d\n",man1.name,man1.age,man1.salary);
+//	struct man* pman1 = &man1;
+//	printf("姓名:%s,年龄:%d,薪资:%d\n", pman1->name, pman1->age, pman1->salary);
+//	printf("姓名:%s,年龄:%d,薪资:%d\n",(*pman1).name, (*pman1).age, (*pman1).salary);
+//}
