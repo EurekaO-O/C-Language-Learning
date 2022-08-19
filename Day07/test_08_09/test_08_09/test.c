@@ -405,8 +405,8 @@
 ////}
 
 /*---------------- 表达式求值 ----------------*/
-#define _CRT_SECURE_NO_WARNINGS
-#include <stdio.h>
+//#define _CRT_SECURE_NO_WARNINGS
+//#include <stdio.h>
 //整形提升
 //void main() {
 //	////正数的整形提升
@@ -467,6 +467,21 @@
 //}
 
 //算术转换
+//void main() {
+//	
+//	//float f = 3.14f;
+//	//int a = f;
+//	////此时a的大小虽然和f一致，但f的精度更高，所以a会被转换成float类型
+//	//printf("%f\n",a + f);
+//
+//	//float f = 3.14f;
+//	//int a = f;
+//	//printf("%d\n",a);//3 精度丢失
+//}
+
+//操作符的属性
 void main() {
-	
+	int a = 10, b = 20;
+	//int c = a + b * 2;//优先级决定了计算顺序
+	int c = a + b + 2;//运算符相同时优先级不起作用，结合性决定顺序
 }
